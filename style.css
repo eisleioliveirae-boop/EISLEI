@@ -8,8 +8,8 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
-  padding-top: 80px;
-  padding-bottom: 120px;
+  padding-top: 110px;
+  padding-bottom: 140px;
   color: #232342;
 }
 
@@ -29,7 +29,7 @@ header {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: #CBA17B;
 }
@@ -47,11 +47,16 @@ nav a {
   transition: color 0.3s ease;
 }
 
-nav a:hover, nav a.active {
+nav a:hover,
+nav a.active {
   color: #CBA17B;
 }
 
 /* Banner */
+.banner {
+  width: 100%;
+}
+
 .banner img {
   width: 100%;
   max-height: 400px;
@@ -84,6 +89,7 @@ footer {
   text-align: center;
   padding: 15px 10px;
   font-size: 0.9rem;
+  z-index: 999;
 }
 
 .footer-info {
@@ -91,22 +97,36 @@ footer {
   margin: auto;
 }
 
-.footer-info a {
-  color: white;
+.footer-info i {
+  margin-right: 6px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #CBA17B;
+  font-weight: bold;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.socials {
+  margin: 10px 0;
+}
+
+.socials a {
+  color: #CBA17B;
+  font-weight: bold;
   margin: 0 5px;
   text-decoration: none;
 }
 
-.footer-info a.whatsapp {
-  color: #25D366;
+.socials a:hover {
+  text-decoration: underline;
 }
 
-.footer-info .socials i {
-  font-size: 1.2rem;
-  margin: 0 8px;
-}
-
-.footer-info .slogan {
+.slogan {
   margin-top: 8px;
   color: #CBA17B;
   font-style: italic;
