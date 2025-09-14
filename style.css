@@ -8,7 +8,7 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
-  padding-top: 460px; /* Para compensar altura do banner */
+  padding-top: 280px; /* 60 (menu) + 200 (banner) + espaço extra */
   padding-bottom: 140px;
   color: #0F2040;
 }
@@ -55,7 +55,7 @@ nav a.active {
 /* Banner fixo */
 .banner {
   position: fixed;
-  top: 60px; /* abaixo do menu */
+  top: 60px; /* logo abaixo do menu */
   left: 0;
   width: 100%;
   z-index: 900;
@@ -63,7 +63,7 @@ nav a.active {
 
 .banner img {
   width: 100%;
-  height: 400px;
+  height: 200px;
   object-fit: cover;
   display: block;
 }
