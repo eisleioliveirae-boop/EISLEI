@@ -8,14 +8,14 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
-  padding-top: 110px;
+  padding-top: 460px; /* Para compensar altura do banner */
   padding-bottom: 140px;
-  color: #232342;
+  color: #0F2040;
 }
 
 /* Cabeçalho */
 header {
-  background-color: #232342;
+  background-color: #0F2040;
   color: white;
   position: fixed;
   top: 0;
@@ -31,7 +31,7 @@ header {
 .logo {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #CBA17B;
+  color: #C4A760;
 }
 
 nav ul {
@@ -49,17 +49,21 @@ nav a {
 
 nav a:hover,
 nav a.active {
-  color: #CBA17B;
+  color: #C4A760;
 }
 
-/* Banner */
+/* Banner fixo */
 .banner {
+  position: fixed;
+  top: 60px; /* abaixo do menu */
+  left: 0;
   width: 100%;
+  z-index: 900;
 }
 
 .banner img {
   width: 100%;
-  max-height: 400px;
+  height: 400px;
   object-fit: cover;
   display: block;
 }
@@ -67,16 +71,11 @@ nav a.active {
 /* Conteúdo */
 .content {
   max-width: 960px;
-  margin: 40px auto;
-  padding: 0 20px;
+  margin: 0 auto;
+  padding: 40px 20px;
   line-height: 1.8;
   font-size: 1.1rem;
-}
-
-.content h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #232342;
+  background-color: #ffffff;
 }
 
 /* Rodapé */
@@ -84,7 +83,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #232342;
+  background-color: #0F2040;
   color: white;
   text-align: center;
   padding: 15px 10px;
@@ -103,7 +102,7 @@ footer {
 
 .footer-link {
   text-decoration: none;
-  color: #CBA17B;
+  color: #C4A760;
   font-weight: bold;
 }
 
@@ -116,7 +115,7 @@ footer {
 }
 
 .socials a {
-  color: #CBA17B;
+  color: #C4A760;
   font-weight: bold;
   margin: 0 5px;
   text-decoration: none;
@@ -128,6 +127,6 @@ footer {
 
 .slogan {
   margin-top: 8px;
-  color: #CBA17B;
+  color: white;
   font-style: italic;
 }
