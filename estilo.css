@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -8,12 +7,11 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
-  padding-top: 280px; /* 60 (menu) + 200 (banner) + espaço extra */
+  padding-top: 80px;
   padding-bottom: 140px;
   color: #0F2040;
 }
 
-/* Cabeçalho */
 header {
   background-color: #0F2040;
   color: white;
@@ -52,43 +50,49 @@ nav a.active {
   color: #C4A760;
 }
 
-/* Banner fixo */
 .banner {
-  position: fixed;
-  top: 60px; /* logo abaixo do menu */
-  left: 0;
   width: 100%;
-  z-index: 900;
+  margin-top: 60px;
+  position: relative;
 }
 
 .banner img {
   width: 100%;
-  height: 180px;
+  height: 150px;
   object-fit: cover;
   display: block;
 }
 
-/* Conteúdo */
+.slogan-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.3rem;
+  background-color: rgba(15, 32, 64, 0.6);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-style: italic;
+  z-index: 10;
+}
+
 .content {
   max-width: 960px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  margin: 40px auto;
+  padding: 0 20px;
   line-height: 1.8;
   font-size: 1.1rem;
   background-color: #ffffff;
 }
 
-/* Rodapé */
 footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #0F2040;
+  background-color: #1a2a4f;
   color: white;
   text-align: center;
-  padding: 15px 10px;
+  padding: 20px 10px;
   font-size: 0.9rem;
-  z-index: 999;
+  margin-top: 40px;
 }
 
 .footer-info {
@@ -123,10 +127,4 @@ footer {
 
 .socials a:hover {
   text-decoration: underline;
-}
-
-.slogan {
-  margin-top: 8px;
-  color: white;
-  font-style: italic;
 }
