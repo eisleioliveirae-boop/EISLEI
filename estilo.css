@@ -6,15 +6,13 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #f9f9f9;
   color: #0F2040;
-  /* Espaço para menu + banner */
-  margin: 0;
-  padding: 0;
+  line-height: 1.5;
 }
 
-/* Cabeçalho fixo */
+/* Cabeçalho */
 header {
   background-color: #0F2040;
   color: white;
@@ -23,8 +21,8 @@ header {
   width: 100%;
   height: 60px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0 30px;
   z-index: 1000;
 }
@@ -45,24 +43,23 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
 }
 
-nav a:hover,
-nav a.active {
+nav a.active,
+nav a:hover {
   color: #C4A760;
 }
 
-/* Banner normal abaixo do menu */
+/* Banner */
 .banner {
-  margin-top: 60px; /* coloca abaixo do cabeçalho */
+  margin-top: 60px; /* abaixo do header fixo */
   position: relative;
   width: 100%;
 }
 
 .banner img {
   width: 100%;
-  height: 150px;
+  height: 150px; /* ajustar se quiser mais baixo ainda */
   object-fit: cover;
   display: block;
 }
@@ -73,26 +70,24 @@ nav a.active {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   background-color: rgba(15, 32, 64, 0.6);
   padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 6px;
   font-style: italic;
   z-index: 10;
 }
 
-/* Conteúdo principal */
-.main,
-.content {
+/* Conteúdo */
+main .content {
   max-width: 960px;
-  margin: 40px auto;
+  margin: 20px auto 40px auto;
   padding: 0 20px;
-  line-height: 1.8;
-  font-size: 1.1rem;
   background-color: #ffffff;
+  color: #0F2040;
 }
 
-/* Rodapé não fixo, mais leve */
+/* Rodapé */
 footer {
   background-color: #1a2a4f;
   color: white;
@@ -122,12 +117,11 @@ footer {
 }
 
 .socials {
-  margin: 10px 0;
+  margin-top: 10px;
 }
 
 .socials a {
   color: #C4A760;
-  font-weight: bold;
   margin: 0 5px;
   text-decoration: none;
 }
