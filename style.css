@@ -1,4 +1,8 @@
-/* Reset básico */
+/* Base global */
+html {
+  font-size: 100%; /* Base = 16px */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,18 +11,21 @@
 
 body {
   font-family: Arial, sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* ≈ 19.2px */
   line-height: 1.8;
   background-color: white;
   color: #000;
 }
 
-/* Navegação */
+/* Navegação fixa no topo */
 .navbar {
-  background-color: #002F6C; /* cor azul amanho */
+  background-color: #002F6C; /* Azul amanho */
   padding: 1rem 2rem;
   display: flex;
   justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar ul {
@@ -31,12 +38,12 @@ body {
   color: white;
   text-decoration: none;
   transition: color 0.3s;
-  font-size: inherit;
+  font-size: 1rem; /* ≈ 16px */
 }
 
-.navbar a.active,
-.navbar a:hover {
-  color: #C4A760;
+.navbar a:hover,
+.navbar a.active {
+  color: #C4A760; /* Dourado */
 }
 
 /* Banner */
@@ -48,7 +55,7 @@ body {
   display: block;
 }
 
-/* Quem somos */
+/* Conteúdo principal */
 .quem-somos {
   padding: 2rem;
   max-width: 1000px;
@@ -57,11 +64,11 @@ body {
 
 /* Rodapé */
 footer {
-  background-color: #002F6C; /* azul amanho */
+  background-color: #002F6C; /* Azul amanho */
   color: white;
   text-align: center;
   padding: 1.5rem 1rem;
-  font-size: 0.9rem;
+  font-size: 0.9rem; /* ≈ 14.4px */
   position: relative;
   bottom: 0;
   width: 100%;
@@ -72,9 +79,14 @@ footer a {
   text-decoration: underline;
 }
 
+footer a:hover {
+  color: #C4A760;
+}
+
 footer .slogan {
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* ≈ 19.2px */
   margin-bottom: 1rem;
+  color: white;
 }
 
 footer .social a {
