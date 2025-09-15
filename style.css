@@ -1,110 +1,82 @@
-/* ===== Reset básico ===== */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== Estilo base ===== */
 body {
   font-family: Arial, sans-serif;
-  font-size: 1.1rem;        /* ≈ 17.6px */
+  font-size: 1.1rem;
   line-height: 1.8;
-  background-color: #ffffff;
-  color: #333333;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: white;
+  color: #000;
 }
 
-/* ===== Cabeçalho ===== */
-header {
-  background-color: #004080;
+/* Navegação */
+.navbar {
+  background-color: #002F6C; /* cor azul amanho */
   padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav-links {
-  list-style: none;
   display: flex;
   justify-content: flex-end;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
   gap: 2rem;
 }
 
-.nav-links a {
+.navbar a {
+  color: white;
   text-decoration: none;
-  color: #ffffff;
-  font-size: inherit; /* herda de body (1.1rem) */
   transition: color 0.3s;
+  font-size: inherit;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.navbar a.active,
+.navbar a:hover {
   color: #C4A760;
 }
 
-/* ===== Banner ===== */
-.banner {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
+/* Banner */
 .banner img {
   width: 100%;
-  height: auto;
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
   display: block;
 }
 
-.slogan {
-  position: absolute;
-  bottom: 1rem;
-  left: 2rem;
-  color: white;
-  font-size: 1.2rem; /* ≈ 19.2px */
-  font-weight: bold;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-}
-
-/* ===== Conteúdo Principal ===== */
-main {
-  flex: 1;
-}
-
-.content {
+/* Quem somos */
+.quem-somos {
   padding: 2rem;
-  background-color: white;
-  color: #333333;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* ===== Rodapé ===== */
+/* Rodapé */
 footer {
-  background-color: #004080;
+  background-color: #002F6C; /* azul amanho */
   color: white;
-  padding: 1rem 2rem;
-  font-size: 0.9rem; /* ≈ 14.4px */
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
   width: 100%;
-  margin-top: auto;
 }
 
 footer a {
   color: white;
-  text-decoration: none;
-  margin-right: 1rem;
-}
-
-footer a:hover {
   text-decoration: underline;
 }
 
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+footer .slogan {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
-.socials a {
-  margin: 0 0.3rem;
+footer .social a {
+  margin: 0 0.5rem;
 }
