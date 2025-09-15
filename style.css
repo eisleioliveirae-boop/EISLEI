@@ -1,13 +1,23 @@
-/* Estilo base */
-body {
+/* ===== Reset básico ===== */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  background-color: #ffffff;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* ===== Estilo base ===== */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1.1rem;        /* ≈ 17.6px */
+  line-height: 1.8;
+  background-color: #ffffff;
+  color: #333333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Cabeçalho ===== */
 header {
   background-color: #004080;
   padding: 1rem 2rem;
@@ -21,14 +31,12 @@ header {
   display: flex;
   justify-content: flex-end;
   gap: 2rem;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #ffffff;
-  font-size: inherit;
+  font-size: inherit; /* herda de body (1.1rem) */
   transition: color 0.3s;
 }
 
@@ -37,6 +45,7 @@ header {
   color: #C4A760;
 }
 
+/* ===== Banner ===== */
 .banner {
   position: relative;
   width: 100%;
@@ -54,28 +63,30 @@ header {
   bottom: 1rem;
   left: 2rem;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* ≈ 19.2px */
   font-weight: bold;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+/* ===== Conteúdo Principal ===== */
+main {
+  flex: 1;
 }
 
 .content {
   padding: 2rem;
   background-color: white;
-  color: #333;
+  color: #333333;
 }
 
+/* ===== Rodapé ===== */
 footer {
   background-color: #004080;
   color: white;
   padding: 1rem 2rem;
-  font-size: 0.9rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  position: relative;
-  bottom: 0;
+  font-size: 0.9rem; /* ≈ 14.4px */
   width: 100%;
+  margin-top: auto;
 }
 
 footer a {
