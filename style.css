@@ -49,9 +49,10 @@ body {
 /* Banner */
 .banner img {
   width: 100%;
-  max-width: 100%;
-  height: auto; /* Altura automática para não cortar o banner */
+  height: auto;      /* mantém proporção */
+  max-height: 350px; /* limita altura para não ficar gigante */
   display: block;
+  object-fit: contain; /* evita corte da imagem */
 }
 
 /* Conteúdo principal */
