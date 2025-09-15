@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -7,11 +8,13 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
-  padding-top: 80px;
-  padding-bottom: 140px;
   color: #0F2040;
+  /* Espaço para menu + banner */
+  margin: 0;
+  padding: 0;
 }
 
+/* Cabeçalho fixo */
 header {
   background-color: #0F2040;
   color: white;
@@ -50,10 +53,11 @@ nav a.active {
   color: #C4A760;
 }
 
+/* Banner normal abaixo do menu */
 .banner {
-  width: 100%;
-  margin-top: 60px;
+  margin-top: 60px; /* coloca abaixo do cabeçalho */
   position: relative;
+  width: 100%;
 }
 
 .banner img {
@@ -77,6 +81,8 @@ nav a.active {
   z-index: 10;
 }
 
+/* Conteúdo principal */
+.main,
 .content {
   max-width: 960px;
   margin: 40px auto;
@@ -86,6 +92,7 @@ nav a.active {
   background-color: #ffffff;
 }
 
+/* Rodapé não fixo, mais leve */
 footer {
   background-color: #1a2a4f;
   color: white;
