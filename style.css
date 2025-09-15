@@ -38,7 +38,7 @@ body {
   color: white;
   text-decoration: none;
   transition: color 0.3s;
-  font-size: 1rem; /* ≈ 16px */
+  font-size: 1.1rem; /* ≈ 17.6px */
 }
 
 .navbar a:hover,
@@ -50,8 +50,8 @@ body {
 .banner img {
   width: 100%;
   max-width: 100%;
-  height: 300px;
-  object-fit: cover;
+  height: 450px; /* Aumentado para exibir imagem inteira */
+  object-fit: contain; /* Garante que nada seja cortado */
   display: block;
 }
 
@@ -84,7 +84,7 @@ footer a:hover {
 }
 
 footer .slogan {
-  font-size: 1.2rem; /* ≈ 19.2px */
+  font-size: 1.3rem; /* ≈ 20.8px */
   margin-bottom: 1rem;
   color: white;
 }
