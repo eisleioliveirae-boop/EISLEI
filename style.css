@@ -1,139 +1,30 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Arial", sans-serif;
-}
-
-body {
-    line-height: 1.6;
-    background-color: #f8f9fa;
-    color: #232342;
-}
-
-/* Cabeçalho */
+/* Banner com overlay */
 header {
-    background: #232342;
+    background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
-    padding: 20px;
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header .logo img {
-    max-width: 150px;
-    margin-bottom: 10px;
+header .overlay {
+    background-color: rgba(35, 35, 66, 0.7); /* Azul escuro translúcido */
+    padding: 40px;
+    border-radius: 8px;
 }
 
 header h1 {
-    font-size: 2rem;
-    margin: 10px 0;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #CBA17B;
 }
 
 header .slogan {
     font-style: italic;
     color: #CBA17B;
     margin-bottom: 15px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #CBA17B;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: white;
-}
-
-/* Seções */
-.section {
-    padding: 60px 20px;
-}
-
-.alt-bg {
-    background: #e9ecef;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* Fundadora */
-.founder {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-}
-
-.founder img {
-    max-width: 250px;
-    border-radius: 10px;
-    border: 3px solid #CBA17B;
-}
-
-/* Áreas de Atuação */
-.areas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.area-card {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 5px solid #232342;
-    transition: 0.3s;
-}
-
-.area-card:hover {
-    border-left: 5px solid #CBA17B;
-    transform: translateY(-5px);
-}
-
-.area-card h3 {
-    color: #232342;
-    margin-bottom: 10px;
-}
-
-/* Contato */
-#contato a {
-    color: #232342;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-#contato a:hover {
-    color: #CBA17B;
-}
-
-/* Rodapé */
-footer {
-    background: #232342;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-footer .social a {
-    margin: 0 10px;
-    color: #CBA17B;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer .social a:hover {
-    color: white;
 }
