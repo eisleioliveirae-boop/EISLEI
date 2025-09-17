@@ -1,30 +1,192 @@
-/* Banner com overlay */
-header {
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    position: relative;
-    min-height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+:root{
+  --azul-escuro: #232342;
+  --dourado-rose: #CBA17B;
+  --dourado-active: #C4A760; /* cor que pediu para quando ativar a aba */
+  --white: #ffffff;
+  --max-width: 1100px;
+  --container-pad: 20px;
 }
 
-header .overlay {
-    background-color: rgba(35, 35, 66, 0.7); /* Azul escuro translúcido */
-    padding: 40px;
-    border-radius: 8px;
+/* Ensure fonts and fallback */
+html { font-family: "Epilogue", "Roboto", Arial, sans-serif; font-size: 16px; line-height: 1.45; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+
+/* Example @font-face with overrides (modern browsers) */
+@font-face {
+  font-family: 'Epilogue-Override';
+  src: local('Epilogue'), local('Epilogue Regular');
+  ascent-override: 90%;
+  descent-override: 10%;
+  size-adjust: 100%;
+  line-gap-override: 0%;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #CBA17B;
+/* Page layout */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--azul-escuro);
+  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Epilogue", "Roboto", Arial, sans-serif;
 }
 
-header .slogan {
-    font-style: italic;
-    color: #CBA17B;
-    margin-bottom: 15px;
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 36px var(--container-pad);
+}
+
+/* Header */
+.site-header {
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  padding: 22px 0;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.brand-name {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.4px;
+  margin-bottom: 6px;
+  text-align: left;
+}
+.slogan {
+  color: var(--dourado-rose);
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Navigation (direita) */
+.main-nav ul {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  align-items: center;
+}
+.main-nav a.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 6px;
+  transition: color .18s ease;
+}
+.main-nav a.nav-link:hover{
+  color: var(--dourado-rose); /* hover -> dourado */
+  cursor: pointer;
+}
+/* active / when clicked entire text should become dourado (we change color via JS) */
+.main-nav a.nav-link.active {
+  color: var(--dourado-active);
+}
+
+/* Sections */
+.section {
+  padding: 54px 0;
+  color: var(--white);
+}
+.section h2 {
+  color: var(--dourado-rose);
+  font-size: 24px;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+.section .content p {
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 12px;
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Fundadora layout */
+.fundadora-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.fundadora-grid .foto img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  border: 2px solid rgba(255,255,255,0.04);
+}
+.bio h3 { margin-bottom: 8px; color: var(--white); }
+.bio p { margin-bottom: 8px; color: rgba(255,255,255,0.95); }
+
+/* Areas list */
+.area { margin-bottom: 18px; background: rgba(255,255,255,0.02); padding: 14px; border-radius: 8px; }
+.area h3 { color: var(--white); margin-bottom: 8px; font-size: 18px; }
+.area ul { margin-left: 18px; color: rgba(255,255,255,0.9); }
+
+/* Artigos */
+.artigos-list { display: grid; gap: 12px; }
+.artigo { background: rgba(255,255,255,0.02); padding: 14px; border-radius: 8px; }
+.artigo h4 { color: var(--white); margin-bottom: 8px; }
+.artigo p { margin-bottom: 8px; color: rgba(255,255,255,0.9); }
+.btn {
+  display: inline-block;
+  background: transparent;
+  color: var(--dourado-rose);
+  border: 1px solid rgba(203,161,123,0.18);
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Contato form */
+.contact-form { max-width: 720px; background: rgba(255,255,255,0.02); padding: 16px; border-radius: 8px; }
+.form-row { margin-bottom: 12px; display: flex; flex-direction: column; }
+.form-row label { margin-bottom: 6px; color: rgba(255,255,255,0.85); font-weight: 500; font-size: 14px; }
+.form-row input, .form-row textarea {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 10px;
+  color: var(--white);
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+}
+.form-row input::placeholder, .form-row textarea::placeholder { color: rgba(255,255,255,0.5); }
+.form-actions { display: flex; gap: 12px; align-items: center; }
+.btn.primary {
+  background: var(--dourado-rose);
+  color: var(--azul-escuro);
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* Footer */
+.site-footer { margin-top: auto; background: rgba(0,0,0,0.06); padding: 18px 0; border-top: 1px solid rgba(255,255,255,0.02); }
+.footer-inner { display:flex; justify-content:space-between; align-items:center; gap: 16px; flex-wrap:wrap; }
+.contact-list { display:flex; gap: 20px; align-items:center; }
+.contact-item { display:flex; gap:8px; align-items:center; color:var(--white); text-decoration:none; font-weight:500; }
+.contact-item svg { fill: var(--dourado-rose); }
+.socials { color:var(--white); font-weight:500; }
+.socials a { color: var(--white); text-decoration: none; margin: 0 8px; }
+.socials .sep { color: rgba(255,255,255,0.25); margin:0 6px; }
+
+/* Responsive */
+@media (max-width: 900px){
+  .header-inner { flex-direction: column; align-items:flex-start; gap:12px; }
+  .main-nav ul { flex-wrap:wrap; gap:10px; }
+  .fundadora-grid { grid-template-columns: 1fr; }
 }
