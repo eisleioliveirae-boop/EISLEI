@@ -1,192 +1,170 @@
-:root{
-  --azul-escuro: #232342;
-  --dourado-rose: #CBA17B;
-  --dourado-active: #C4A760; /* cor que pediu para quando ativar a aba */
-  --white: #ffffff;
-  --max-width: 1100px;
-  --container-pad: 20px;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Ensure fonts and fallback */
-html { font-family: "Epilogue", "Roboto", Arial, sans-serif; font-size: 16px; line-height: 1.45; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
-
-/* Example @font-face with overrides (modern browsers) */
-@font-face {
-  font-family: 'Epilogue-Override';
-  src: local('Epilogue'), local('Epilogue Regular');
-  ascent-override: 90%;
-  descent-override: 10%;
-  size-adjust: 100%;
-  line-gap-override: 0%;
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Page layout */
-* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  background: var(--azul-escuro);
-  color: var(--white);
-  min-height: 100vh;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #fff;
+  color: #232342;
+  line-height: 1.6;
+}
+
+/* Navbar fixa */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  font-weight: bold;
+  color: #232342;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #232342;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #CBA17B;
+}
+
+/* Banner / Logo */
+.hero {
+  background: #f8f9fa;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 60px; /* compensar menu fixo */
+  padding: 40px 20px;
+}
+
+.hero-content {
   display: flex;
   flex-direction: column;
-  font-family: "Epilogue", "Roboto", Arial, sans-serif;
+  align-items: center;
+  gap: 20px;
 }
 
-/* Container */
+.hero-logo {
+  max-width: 320px;
+  height: auto;
+}
+
+.hero .slogan {
+  font-style: italic;
+  color: #232342;
+  font-size: 1.2rem;
+}
+
+/* Seções */
+.section {
+  padding: 60px 20px;
+}
+
+.light-bg {
+  background: #f8f9fa;
+}
+
 .container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 36px var(--container-pad);
+  max-width: 1100px;
+  margin: auto;
 }
 
-/* Header */
-.site-header {
-  border-bottom: 1px solid rgba(255,255,255,0.03);
-  padding: 22px 0;
-}
-.header-inner {
+/* Fundadora */
+.founder {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Brand */
-.brand-name {
-  color: var(--white);
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 0.4px;
-  margin-bottom: 6px;
-  text-align: left;
-}
-.slogan {
-  color: var(--dourado-rose);
-  font-size: 13px;
-  font-weight: 600;
-  margin-top: 2px;
-}
-
-/* Navigation (direita) */
-.main-nav ul {
-  display: flex;
-  gap: 18px;
-  list-style: none;
+  flex-wrap: wrap;
+  gap: 20px;
   align-items: center;
 }
-.main-nav a.nav-link {
-  color: var(--white);
+
+.founder img {
+  max-width: 250px;
+  border-radius: 10px;
+  border: 2px solid #CBA17B;
+}
+
+/* Áreas de atuação */
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.area-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-left: 4px solid #232342;
+  padding: 20px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.area-card:hover {
+  border-left: 4px solid #CBA17B;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.area-card h3 {
+  color: #232342;
+  margin-bottom: 10px;
+}
+
+/* Contato */
+#contato a {
+  color: #232342;
   text-decoration: none;
   font-weight: 500;
-  padding: 8px 6px;
-  transition: color .18s ease;
-}
-.main-nav a.nav-link:hover{
-  color: var(--dourado-rose); /* hover -> dourado */
-  cursor: pointer;
-}
-/* active / when clicked entire text should become dourado (we change color via JS) */
-.main-nav a.nav-link.active {
-  color: var(--dourado-active);
 }
 
-/* Sections */
-.section {
-  padding: 54px 0;
-  color: var(--white);
-}
-.section h2 {
-  color: var(--dourado-rose);
-  font-size: 24px;
-  margin-bottom: 18px;
-  font-weight: 700;
-}
-.section .content p {
-  color: rgba(255,255,255,0.95);
-  margin-bottom: 12px;
-  text-align: justify;
-  font-size: 16px;
-  line-height: 1.7;
+#contato a:hover {
+  color: #CBA17B;
 }
 
-/* Fundadora layout */
-.fundadora-grid {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 28px;
-  align-items: start;
-}
-.fundadora-grid .foto img{
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-  display: block;
-  border: 2px solid rgba(255,255,255,0.04);
-}
-.bio h3 { margin-bottom: 8px; color: var(--white); }
-.bio p { margin-bottom: 8px; color: rgba(255,255,255,0.95); }
-
-/* Areas list */
-.area { margin-bottom: 18px; background: rgba(255,255,255,0.02); padding: 14px; border-radius: 8px; }
-.area h3 { color: var(--white); margin-bottom: 8px; font-size: 18px; }
-.area ul { margin-left: 18px; color: rgba(255,255,255,0.9); }
-
-/* Artigos */
-.artigos-list { display: grid; gap: 12px; }
-.artigo { background: rgba(255,255,255,0.02); padding: 14px; border-radius: 8px; }
-.artigo h4 { color: var(--white); margin-bottom: 8px; }
-.artigo p { margin-bottom: 8px; color: rgba(255,255,255,0.9); }
-.btn {
-  display: inline-block;
-  background: transparent;
-  color: var(--dourado-rose);
-  border: 1px solid rgba(203,161,123,0.18);
-  padding: 8px 12px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
+/* Rodapé */
+footer {
+  background: #232342;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-/* Contato form */
-.contact-form { max-width: 720px; background: rgba(255,255,255,0.02); padding: 16px; border-radius: 8px; }
-.form-row { margin-bottom: 12px; display: flex; flex-direction: column; }
-.form-row label { margin-bottom: 6px; color: rgba(255,255,255,0.85); font-weight: 500; font-size: 14px; }
-.form-row input, .form-row textarea {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 10px;
-  color: var(--white);
-  border-radius: 6px;
-  font-size: 15px;
-  outline: none;
-}
-.form-row input::placeholder, .form-row textarea::placeholder { color: rgba(255,255,255,0.5); }
-.form-actions { display: flex; gap: 12px; align-items: center; }
-.btn.primary {
-  background: var(--dourado-rose);
-  color: var(--azul-escuro);
-  padding: 10px 16px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  font-weight: 700;
+footer .social a {
+  margin: 0 10px;
+  color: #CBA17B;
+  font-size: 1.2rem;
+  transition: 0.3s;
 }
 
-/* Footer */
-.site-footer { margin-top: auto; background: rgba(0,0,0,0.06); padding: 18px 0; border-top: 1px solid rgba(255,255,255,0.02); }
-.footer-inner { display:flex; justify-content:space-between; align-items:center; gap: 16px; flex-wrap:wrap; }
-.contact-list { display:flex; gap: 20px; align-items:center; }
-.contact-item { display:flex; gap:8px; align-items:center; color:var(--white); text-decoration:none; font-weight:500; }
-.contact-item svg { fill: var(--dourado-rose); }
-.socials { color:var(--white); font-weight:500; }
-.socials a { color: var(--white); text-decoration: none; margin: 0 8px; }
-.socials .sep { color: rgba(255,255,255,0.25); margin:0 6px; }
-
-/* Responsive */
-@media (max-width: 900px){
-  .header-inner { flex-direction: column; align-items:flex-start; gap:12px; }
-  .main-nav ul { flex-wrap:wrap; gap:10px; }
-  .fundadora-grid { grid-template-columns: 1fr; }
+footer .social a:hover {
+  color: white;
 }
